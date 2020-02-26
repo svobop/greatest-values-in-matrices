@@ -20,7 +20,18 @@ namespace greatest_values_in_matrices
             secondMatrix.Add(new List<int> { -1, 1 });
             secondMatrix.Add(new List<int> { 2, 2 });
             
-            Console.WriteLine(CompareMatrix(firstMatrix, secondMatrix));
+            var comparedMatrix = CompareMatrix(firstMatrix, secondMatrix);
+
+            foreach (List<int> row in comparedMatrix)
+            {
+                string strRow = "";
+                foreach (int item in row)
+                {
+                    strRow = strRow + item.ToString() + ", ";
+                }
+
+                Console.WriteLine(strRow);
+            }
         }
     }
 }
