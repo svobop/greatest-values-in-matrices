@@ -8,6 +8,16 @@ namespace greatest_values_in_matrices
         public static List<List<int>> CompareMatrix(List<List<int>> firstMatrix, List<List<int>> secondMatrix)
         {
             var output = firstMatrix;
+            for (int i = 0; i < output.Count; i++)
+            {
+                for (int j = 0; j < output[i].Count; j++)
+                {
+                    if (secondMatrix[i][j] > output[i][j])
+                    {
+                        output[i][j] = secondMatrix[i][j];
+                    }
+                }
+            }
             return output;
         }
         static void Main(string[] args)
